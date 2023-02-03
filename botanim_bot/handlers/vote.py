@@ -30,7 +30,6 @@ def validate_user(handler):
     return wrapped
 
 
-@validate_user
 async def vote(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if await get_actual_voting() is None:
         await send_response(
@@ -64,7 +63,6 @@ async def vote(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 
-@validate_user
 async def vote_button(update: Update, _: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()

@@ -14,7 +14,6 @@ from botanim_bot.services.votings import save_vote
 from botanim_bot.templates import render_template
 
 
-@validate_user
 async def vote_process(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not await is_user_in_vote_mode(cast(User, update.effective_user).id):
         await send_response(
