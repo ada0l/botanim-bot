@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  bot:
+    build: .
+    command: poetry run python -m botanim_bot
+    volumes:
+      - .:/code
+    env_file: .env
